@@ -1,28 +1,27 @@
-﻿git add                          	  //提交到缓存去
+﻿/*查看自己的用户名和邮箱地址：	*/ 
+git config user.name
+git config user.email
+
+/*修改自己的用户名和邮箱地址：	*/ 
+git config --global user.name "xxx"
+git config --global user.email "xxx"
+
+git add                          	  //提交到缓存去
 git commit -m "注释"               //提交到版本区
 
-
 git log         (git log -- pretty=oneline)               //查看历史
-git reflog                             //it提供了一个命令git reflog用来记录你的每一次命令：
-git status                           //查看状态
+git reflog                             		//it提供了一个命令git reflog用来记录你的每一次命令：
+git status                           		//查看状态
 
-
-
-git reset --hard HEAD^             //指向上一层
-git reset --hard+地址              //指向地址所在的层
-
-
+git reset --hard HEAD^             //指向上一个版本
+git reset --hard+地址              //指向某个版本所在的地址
 
 
 git checkout --file      //用版本库里的替换工作区的，无论工作区的文件是被是修改还是删除，都可以一键还原
-
 /*
 命令git checkout -- readme.txt意思就是，把readme.txt文件在工作区的修改全部撤销，这里有两种情况：
-
 一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；
-
 一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。
-
 */
 
 
