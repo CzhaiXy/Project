@@ -1,0 +1,66 @@
+﻿git add                          	  //提交到缓存去
+git commit -m "注释"               //提交到版本区
+
+
+git log         (git log -- pretty=oneline)               //查看历史
+git reflog                             //it提供了一个命令git reflog用来记录你的每一次命令：
+git status                           //查看状态
+
+
+
+git reset --hard HEAD^             //指向上一层
+git reset --hard+地址              //指向地址所在的层
+
+
+
+
+git checkout --file      //用版本库里的替换工作区的，无论工作区的文件是被是修改还是删除，都可以一键还原
+
+/*
+命令git checkout -- readme.txt意思就是，把readme.txt文件在工作区的修改全部撤销，这里有两种情况：
+
+一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；
+
+一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。
+
+*/
+
+
+git checkout -b dev               //创建dev分支
+/*
+git checkout命令加上-b参数表示创建并切换，相当于以下两条命令：
+$ git branch dev
+$ git checkout dev
+Switched to branch 'dev'
+*/
+
+
+
+git branch                         //列出所有分支，当前分支上会标注一个*
+git checkout master                //调换到master分支
+git merge dev                      //把dev分支的工作成果合并到master
+git branch -d dev                  //删除dev分支
+
+
+
+git reset HEAD<file>             //把暂存区的修改退回到工作区
+git rm<file>                     //删除版本库中的文件
+
+
+
+git tag <name>                   //打一个新标签
+git tag                          //查看所有标签
+git show <tagname>               //查看标签信息
+git tag -a<tagname> -m "注释" +地址     //指定标签信息
+git tag -d <tagname>                 //删除标签
+git push origin <tagname>            //推送tagname标签到远程
+git push origin -tags             //一键推送到远程
+git push origin :refs/tags/<tagname>      //删除一个远程标签
+
+
+git remote add origin 网址               //关联远程仓库
+git remote -v                            //查看关联的远程仓库
+git remote rm origin                     //删除关联的远程仓库
+git push origin master                   //推送master到远程
+git pull --rebase origin master          //本地仓与远程仓同步
+git clone +地址                          //克隆远程仓
